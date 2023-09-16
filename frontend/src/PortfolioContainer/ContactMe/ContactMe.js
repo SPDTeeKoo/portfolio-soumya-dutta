@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import Typical from 'react-typical';
+// import Typical from 'react-typical';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useTypewriter, Cursor } from 'react-simple-typewriter';
 
 import imgBack from '../../../src/images/mailz.jpeg';
 import load1 from '../../../src/images/load2.gif';
@@ -16,6 +17,13 @@ export default function ContactMe(props) {
     if (screen.fadeInScreen !== props.id) return;
     Animations.animations.fadeInScreen(props.id);
   };
+
+  const [typeEffect] = useTypewriter({
+    words: ['Get In Touch 📧'],
+    loop: {},
+    typeSpeed: 50,
+    deleteSpeed: 40,
+  });
 
   const fadeInSubscription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
@@ -70,7 +78,8 @@ export default function ContactMe(props) {
       <div className="central-form">
         <div className="col">
           <h2 className="title">
-            <Typical loop={Infinity} steps={['Get In Touch 📧', 1000]} />
+            {/* <Typical loop={Infinity} steps={['Get In Touch 📧', 1000]} /> */}
+            {typeEffect}
           </h2>{' '}
           <a href="https://www.facebook.com/Soumya.prakash.dutta">
             <i className="fa fa-facebook-square" />
