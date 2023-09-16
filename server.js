@@ -1,23 +1,23 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const path = require('path');
-const { fileURLToPath } = require('url');
+// const path = require('path');
+// const { fileURLToPath } = require('url');
 const contactRoute = require('./route/contactRoute');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, './frontend/build')));
+// app.use(express.static(path.join(__dirname, './frontend/build')));
 
 app.use('/', contactRoute);
-app.use('*', function (req, res) {
-  res.sendFile(path.join(__dirname, './frontend/build/index.html'));
-});
+// app.use('*', function (req, res) {
+//   res.sendFile(path.join(__dirname, './frontend/build/index.html'));
+// });
 
 // if (process.env.NODE_ENV === 'production') {
 //   app.use(express.static('client/build'));
