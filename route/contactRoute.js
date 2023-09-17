@@ -41,7 +41,7 @@ router.post('/contact', (req, res) => {
         return res.status(400).json({ msg: 'Please Fill All The Fields!' });
       res.status(200).json({ msg: 'Thank You For Contacting Soumya.' });
     } catch (error) {
-      if (error) return res.status(500).json({ msg: 'There is server error' });
+      if (error) return res.status(500).json({ msg: 'Server Error' });
     }
   });
 });
